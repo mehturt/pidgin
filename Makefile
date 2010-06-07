@@ -1,18 +1,22 @@
 CC=gcc
 CFLAGS=-I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include \
--I${HOME}/opt/pidgin/include/libpurple
+-I${HOME}/opt/pidgin/include/libpurple \
+-I${HOME}/opt/pidgin/include/finch \
+-I${HOME}/opt/pidgin/include/gnt
 CPPFLAGS=-g -O2 -Wall -fPIC
+OBJS=xssidle.o betterhistory.o
 
-all: xssidle.so
+all: $(patsubst %.o,%.so,${OBJS})
 
 xssidle.so: xssidle.o
-	${CC} -shared -o xssidle.so xssidle.o -lnsl -lresolv \
+	${CC} -shared -o $@ $< -lnsl -lresolv \
 	-lXss
 
-xssidle.o: xssidle.c
+betterhistory.so: betterhistory.o
+	${CC} -shared -o $@ $< -lnsl -lresolv
 
-install: xssidle.so
-	cp xssidle.so ~/.purple/plugins
+install: all
+	cp *.so ~/.purple/plugins
 
 clean:
 	rm -f *.o *.so

@@ -133,7 +133,7 @@ static PurplePluginInfo info = {
 	"Set idle time based on information from X11 Screen Saver"
 	" (such as xscreensaver)",
 	"mehturt <mehturt@gmail.com>",
-	"http://github.com/mehturt/xssidle",
+	"http://github.com/mehturt/pidgin",
 
 
 	plugin_load,
@@ -144,6 +144,8 @@ static PurplePluginInfo info = {
 	NULL,
 	NULL,
 	NULL,
+
+	/* padding */
 	NULL,
 	NULL,
 	NULL,

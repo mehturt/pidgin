@@ -1,0 +1,14 @@
+A few pidgin/finch/purple plugins.
+Tested against finch 2.6.6 on Ubuntu 10.04.
+
+xssidle
+-------
+Set idle time based on information from X11 Screen Saver (such as
+xscreensaver).
+
+betterhistory
+-------------
+Shows recently logged conversations in new conversations.
+When a new conversation is opened this plugin will insert
+the last conversation into the current conversation.
+
