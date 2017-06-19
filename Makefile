@@ -1,6 +1,8 @@
 CC=gcc
 CFLAGS=-I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include \
-$(shell pkg-config --cflags finch)
+$(shell pkg-config --cflags finch) \
+$(shell pkg-config --cflags purple) \
+$(shell pkg-config --cflags glib-2.0)
 CPPFLAGS=-g -O2 -Wall -fPIC
 OBJS=xssidle.o betterhistory.o
 
